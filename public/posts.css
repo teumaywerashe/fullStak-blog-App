@@ -1,0 +1,123 @@
+ body {
+     font-family: Arial, sans-serif;
+     background: #f6f7fb;
+     margin: 0;
+     padding: 20px;
+     color: #0f172a;
+ }
+ 
+ .container {
+     max-width: 800px;
+     margin: 0 auto;
+ }
+ 
+ .post {
+     background: #fff;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+     padding: 16px;
+     margin-bottom: 20px;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+     position: relative;
+     /* for absolute positioning inside */
+ }
+ 
+ .actions {
+     position: absolute;
+     top: 16px;
+     right: 16px;
+     /* move to the right */
+     display: flex;
+     gap: 8px;
+ }
+ 
+ .actions button {
+     padding: 6px 12px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     font-size: 14px;
+     transition: background 0.2s ease;
+ }
+ 
+ .actions .edit {
+     background: #3498db;
+     color: white;
+ }
+ 
+ .actions .edit:hover {
+     background: #2980b9;
+ }
+ 
+ .actions .delete {
+     background: #e74c3c;
+     color: white;
+ }
+ 
+ .actions .delete:hover {
+     background: #c0392b;
+ }
+ 
+ #header {
+     margin-top: 0;
+     color: #333;
+ }
+ 
+ .post-meta {
+     font-size: 13px;
+     color: #777;
+     margin: 8px 0 12px;
+ }
+ 
+ .content p {
+     font-size: 15px;
+     line-height: 1.6;
+     color: #444;
+ }
+ 
+ .profile-container {
+     position: absolute;
+     top: 0px;
+     right: 246px;
+     background-color: #fff;
+     padding: 7px 16px;
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     z-index: 1000;
+     width: fit-content;
+ }
+ 
+ .profile-photo {
+     width: 60px;
+     /* size of the circle */
+     height: 60px;
+     border-radius: 50%;
+     /* makes it circular */
+     background-color: #4CAF50;
+     /* any background color you like */
+     color: white;
+     /* text color */
+     font-size: 24px;
+     /* size of the letter */
+     font-weight: bold;
+     display: flex;
+     /* use flex to center the letter */
+     align-items: center;
+     /* vertical center */
+     justify-content: center;
+     /* horizontal center */
+     text-transform: uppercase;
+     /* always uppercase */
+     user-select: none;
+     /* optional: prevent text selection */
+     font-family: Arial, sans-serif;
+ }
+ 
+ .username {
+     font-size: 16px;
+     font-weight: 600;
+     color: #333;
+ }

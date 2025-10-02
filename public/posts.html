@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="posts.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Add New Post Button -->
+        <div style="margin-bottom: 20px;">
+            <button id="add-new-post" style="padding: 10px 16px; font-size: 1rem; border-radius: 10px; background:#10b981; color:white; border:none; cursor:pointer;">+ Add New Post</button>
+        </div>
+        <div class="profile-container">
+            <img id="profile-photo" class="profile-photo" src="https://via.placeholder.com/48" alt="Profile Photo">
+            <div id="user-name" class="username">John Doe</div>
+            <button id="logout-btn" class="logout-btn">logout</button>
+        </div>
+
+        <!--  Sample Post -->
+        <div id="post-container" class="post-container">
+
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="posts.js"></script>
+</body>
+
+</html>

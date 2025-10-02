@@ -1,0 +1,66 @@
+ /* Basic reset */
+ 
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ body {
+     font-family: Arial, sans-serif;
+     background-color: #f4f6f8;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+ /* Container */
+ 
+ body>div {
+     background-color: #fff;
+     padding: 30px;
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     width: 90%;
+     max-width: 500px;
+ }
+ /* Textareas */
+ 
+ textarea {
+     width: 100%;
+     padding: 12px 14px;
+     margin-bottom: 15px;
+     border-radius: 10px;
+     border: 1px solid #cbd5e1;
+     font-size: 1rem;
+     resize: vertical;
+     transition: border-color 0.2s, box-shadow 0.2s;
+ }
+ 
+ textarea:focus {
+     outline: none;
+     border-color: #3b82f6;
+     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+ }
+ /* Button */
+ 
+ #new-post {
+     width: 100%;
+     padding: 12px;
+     border: none;
+     border-radius: 10px;
+     background-color: #3b82f6;
+     color: #fff;
+     font-size: 1rem;
+     cursor: pointer;
+     transition: background-color 0.2s;
+ }
+ 
+ #new-post:hover {
+     background-color: #2563eb;
+ }
+ /* Optional: placeholder styling */
+ 
+ textarea::placeholder {
+     color: #94a3b8;
+ }
