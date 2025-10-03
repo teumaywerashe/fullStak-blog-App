@@ -27,7 +27,7 @@
   editBtnDOM.addEventListener('click', async() => {
       const header = headerDOM.value
       const text = textDOM.value
-      const token = localstorage.getItem('token')
+      const token = localStorage.getItem('token')
       try {
           axios.patch(`/api/v1/posts/${id}`, {
               postHeader: header,
