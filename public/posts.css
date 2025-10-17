@@ -75,12 +75,15 @@
      color: #444;
  }
  
+ .head-container {
+     display: flex;
+     justify-content: space-between;
+ }
+ 
  .profile-container {
-     position: absolute;
-     top: 0px;
-     right: 246px;
      background-color: #fff;
      padding: 7px 16px;
+     margin-bottom: 15px;
      border-radius: 12px;
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
      display: flex;
