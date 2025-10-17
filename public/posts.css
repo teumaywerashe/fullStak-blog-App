@@ -16,17 +16,14 @@
      border: 1px solid #ddd;
      border-radius: 8px;
      padding: 16px;
+     display: flex;
      margin-bottom: 20px;
+     justify-content: space-between;
      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
      position: relative;
-     /* for absolute positioning inside */
  }
  
  .actions {
-     position: absolute;
-     top: 16px;
-     right: 16px;
-     /* move to the right */
      display: flex;
      gap: 8px;
  }
@@ -58,6 +55,12 @@
      background: #c0392b;
  }
  
+ .head-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
  #header {
      margin-top: 0;
      color: #333;
@@ -75,11 +78,6 @@
      color: #444;
  }
  
- .head-container {
-     display: flex;
-     justify-content: space-between;
- }
- 
  .profile-container {
      background-color: #fff;
      padding: 7px 16px;
@@ -95,27 +93,17 @@
  
  .profile-photo {
      width: 60px;
-     /* size of the circle */
      height: 60px;
      border-radius: 50%;
-     /* makes it circular */
      background-color: #4CAF50;
-     /* any background color you like */
      color: white;
-     /* text color */
      font-size: 24px;
-     /* size of the letter */
      font-weight: bold;
      display: flex;
-     /* use flex to center the letter */
      align-items: center;
-     /* vertical center */
      justify-content: center;
-     /* horizontal center */
      text-transform: uppercase;
-     /* always uppercase */
      user-select: none;
-     /* optional: prevent text selection */
      font-family: Arial, sans-serif;
  }
  
@@ -123,4 +111,16 @@
      font-size: 16px;
      font-weight: 600;
      color: #333;
+ }
+ 
+ @media (max-width:600px) {
+     .post {
+         flex-direction: column;
+     }
+     .head-container {
+         flex-direction: column;
+     }
+     .actions {
+         display: block;
+     }
  }
