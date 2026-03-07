@@ -1,26 +1,26 @@
-#📌 Project overveiw
+# Project overveiw
 
 This is a simple full-stack blog application where users can create an account, write blog posts, update them, delete them, and view posts created by other users.
 
-##🛠️ Technologies used
+## Technologies used
 
-###Frontend
+### Frontend
 
 HTML
 CSS
 JavaScript
 
-###Backend
+### Backend
 
 Node.js
 Express.js
 MongoDB Atlas
 
-###Deployment
+###D eployment
 
 Render.com
 
-###🌐 Live Demoy
+### Live Demoy
 
 You can view the deployed website here:  
 
