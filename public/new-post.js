@@ -25,9 +25,7 @@
              }
          });
 
-         console.log('Post created:', response.data);
-
-         // Optional: clear form after successful post
+     // Optional: clear form after successful post
          postHeader.value = '';
          postText.value = '';
          alert('Post created successfully!');

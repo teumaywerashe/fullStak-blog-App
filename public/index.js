@@ -42,7 +42,7 @@ signupBtnDOM.addEventListener('click', async(e) => {
         // Save the token returned from backend
         const token = response.data.token;
         const username = response.data.name;
-        console.log(username);
+       
         localStorage.setItem('token', token);
         localStorage.setItem('username', username);
         window.location.href = 'posts.html';
@@ -74,9 +74,7 @@ loginBtnDOM.addEventListener('click', async(e) => {
 
         // Save the token returned from backend
         const token = response.data.token;
-        // console.log(response); // full Axios response
-        // console.log(response.data); // should include { name, token }
-
+    
         const username = response.data.name;
         localStorage.setItem('token', token);
         localStorage.setItem('username', username);

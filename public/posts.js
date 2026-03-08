@@ -37,7 +37,7 @@ const displayPost = async() => {
                 day: "numeric",
             });
 
-            console.log(formatted);
+            
             return `
             <div class="post">
              
