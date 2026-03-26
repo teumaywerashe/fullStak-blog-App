@@ -8,6 +8,8 @@ import './PostsPage.css'
 function PostsPage() {
   const navigate = useNavigate()
   const [posts, setPosts] = useState([])
+
+
   const [loading, setLoading] = useState(true)
   const token = localStorage.getItem('token')
   const username = localStorage.getItem('username')

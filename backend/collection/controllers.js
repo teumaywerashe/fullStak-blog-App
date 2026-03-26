@@ -1,5 +1,5 @@
 const Post = require('../module/post')
-    // const { trace } = require('../route/postRout')
+
 const createPost = async(req, res) => {
     try {
         const post = await Post.create(req.body)
