@@ -8,7 +8,6 @@ const authRouter = require('./route/authRoute')
 const connectDB = require('./db/connect');
 app.use(express.json())
 app.use(cors())
-app.use(express.static('public'))
 app.use('/api/v1', authRouter, postRouter)
 
 

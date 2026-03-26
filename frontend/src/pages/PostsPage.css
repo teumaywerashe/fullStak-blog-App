@@ -1,0 +1,39 @@
+.posts-wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.posts-header h1 {
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+.btn-new {
+  padding: 8px 18px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-new:hover {
+  background: #059669;
+}
+
+.status-msg {
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 3rem;
+  font-size: 15px;
+}

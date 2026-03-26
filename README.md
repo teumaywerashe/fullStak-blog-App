@@ -1,30 +1,85 @@
-# Project overveiw
+# Blog App
 
-This is a simple full-stack blog application where users can create an account, write blog posts, update them, delete them, and view posts created by other users.
+A full-stack blog application where users can sign up, log in, create posts, edit them, delete them, and read posts from other users.
 
-## Technologies used
+## Tech Stack
 
 ### Frontend
+- React (Vite)
+- React Router DOM
+- Axios
+- CSS Modules (per-component styles)
 
-HTML
-CSS
-JavaScript
+### Backend
+- Node.js + Express
+- MongoDB Atlas + Mongoose
+- JWT Authentication
+- bcryptjs
+
+## Project Structure
+
+```
+├── backend/
+│   ├── collection/       # Auth & post controllers
+│   ├── db/               # MongoDB connection
+│   ├── middleware/        # JWT auth middleware
+│   ├── module/           # Mongoose models (User, Post)
+│   ├── route/            # Express routes
+│   └── app.js
+│
+└── frontend/
+    └── src/
+        ├── components/   # Navbar, PostCard
+        ├── pages/        # LoginPage, PostsPage, NewPostPage, EditPostPage
+        ├── App.jsx        # Routes
+        └── main.jsx
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js
+- MongoDB Atlas URI
 
 ### Backend
 
-Node.js
-Express.js
-MongoDB Atlas
+```bash
+cd backend
+npm install
+```
 
-###D eployment
+Create a `.env` file:
 
-Render.com
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+LIFE_TIME=7d
+PORT=3000
+```
 
-### Live Demoy
+Then run:
 
-You can view the deployed website here:  
+```bash
+node app.js
+```
 
-[Visit the App](https://fullstak-blog-app-2.onrender.com)
+### Frontend
 
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
+The Vite dev server proxies `/api` requests to `http://localhost:3000`.
 
+## Features
+
+- Sign up / Login with JWT
+- View all posts from all users
+- Create, edit, and delete your own posts
+- Protected routes (redirect to login if not authenticated)
+
+## Deployment
+
+Hosted on [Render.com](https://fullstak-blog-app-2.onrender.com)
