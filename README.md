@@ -5,12 +5,14 @@ A full-stack blog application where users can sign up, log in, create posts, edi
 ## Tech Stack
 
 ### Frontend
+
 - React (Vite)
 - React Router DOM
 - Axios
 - CSS Modules (per-component styles)
 
 ### Backend
+
 - Node.js + Express
 - MongoDB Atlas + Mongoose
 - JWT Authentication
@@ -38,6 +40,7 @@ A full-stack blog application where users can sign up, log in, create posts, edi
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js
 - MongoDB Atlas URI
 
