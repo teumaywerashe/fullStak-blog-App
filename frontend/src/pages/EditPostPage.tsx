@@ -4,7 +4,7 @@ import axios from 'axios'
 import './PostFormPage.css'
 
 function EditPostPage() {
-  const { id } = useParams()
+  const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const [header, setHeader] = useState('')
   const [text, setText] = useState('')
@@ -20,7 +20,7 @@ function EditPostPage() {
     }).catch(() => navigate('/posts'))
   }, [id])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     const token = localStorage.getItem('token')
@@ -41,25 +41,11 @@ function EditPostPage() {
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="post-header">Title</label>
-            <input
-              type="text"
-              id="post-header"
-              placeholder="Post title"
-              value={header}
-              onChange={(e) => setHeader(e.target.value)}
-              required
-            />
+            <input type="text" id="post-header" placeholder="Post title" value={header} onChange={(e) => setHeader(e.target.value)} required />
           </div>
           <div className="input-group">
             <label htmlFor="post-text">Content</label>
-            <textarea
-              id="post-text"
-              placeholder="Write your post..."
-              rows={6}
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              required
-            />
+            <textarea id="post-text" placeholder="Write your post..." rows={6} value={text} onChange={(e) => setText(e.target.value)} required />
           </div>
           {error && <p className="error-msg">{error}</p>}
           <div className="form-actions">

@@ -1,0 +1,52 @@
+import mongoose, { Document, Schema } from 'mongoose'
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+
+export interface IUser extends Document {
+  name: string
+  email: string
+  password: string
+  createJWT(): string
+  comparePassword(candidatePassword: string): Promise<boolean>
+}
+
+const userSchema = new Schema<IUser>({
+  name: {
+    type: String,
+    required: [true, 'please provide name'],
+    unique: true,
+  },
+  email: {
+    type: String,
+    required: [true, 'please provide email'],
+    match: [
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      'please provide a valid email',
+    ],
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: [true, 'please provide password'],
+    minLength: 3,
+  },
+})
+
+userSchema.pre('save', async function () {
+  const salt = await bcrypt.genSalt(10)
+  this.password = await bcrypt.hash(this.password, salt)
+})
+
+userSchema.methods.createJWT = function (): string {
+  return jwt.sign(
+    { userID: this.id, name: this.name },
+    process.env.JWT_SECRET as string,
+    { expiresIn: process.env.LIFE_TIME as any }
+  )
+}
+
+userSchema.methods.comparePassword = async function (candidatePassword: string): Promise<boolean> {
+  return bcrypt.compare(candidatePassword, this.password)
+}
+
+export default mongoose.model<IUser>('User', userSchema)

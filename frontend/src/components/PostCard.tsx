@@ -1,7 +1,21 @@
 import { useNavigate } from 'react-router-dom'
 import './PostCard.css'
 
-function PostCard({ post, currentUser, onDelete }) {
+interface Post {
+  _id: string
+  postHeader: string
+  postText: string
+  username: string
+  createdAt: string
+}
+
+interface PostCardProps {
+  post: Post
+  currentUser: string | null
+  onDelete: (id: string) => void
+}
+
+function PostCard({ post, currentUser, onDelete }: PostCardProps) {
   const navigate = useNavigate()
 
   const formatted = new Date(post.createdAt).toLocaleDateString('en-US', {

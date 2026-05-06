@@ -9,7 +9,7 @@ function NewPostPage() {
   const [text, setText] = useState('')
   const [error, setError] = useState('')
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     const token = localStorage.getItem('token')
@@ -31,25 +31,11 @@ function NewPostPage() {
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="post-header">Title</label>
-            <input
-              type="text"
-              id="post-header"
-              placeholder="Post title"
-              value={header}
-              onChange={(e) => setHeader(e.target.value)}
-              required
-            />
+            <input type="text" id="post-header" placeholder="Post title" value={header} onChange={(e) => setHeader(e.target.value)} required />
           </div>
           <div className="input-group">
             <label htmlFor="post-text">Content</label>
-            <textarea
-              id="post-text"
-              placeholder="Write your post..."
-              rows={6}
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              required
-            />
+            <textarea id="post-text" placeholder="Write your post..." rows={6} value={text} onChange={(e) => setText(e.target.value)} required />
           </div>
           {error && <p className="error-msg">{error}</p>}
           <div className="form-actions">

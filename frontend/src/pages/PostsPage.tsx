@@ -5,11 +5,17 @@ import Navbar from '../components/Navbar'
 import PostCard from '../components/PostCard'
 import './PostsPage.css'
 
+interface Post {
+  _id: string
+  postHeader: string
+  postText: string
+  username: string
+  createdAt: string
+}
+
 function PostsPage() {
   const navigate = useNavigate()
-  const [posts, setPosts] = useState([])
-
-
+  const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
   const token = localStorage.getItem('token')
   const username = localStorage.getItem('username')
@@ -32,7 +38,7 @@ function PostsPage() {
     }
   }
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: string) => {
     try {
       await axios.delete(`/api/v1/posts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },

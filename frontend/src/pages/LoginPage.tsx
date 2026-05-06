@@ -15,7 +15,7 @@ function LoginPage() {
   const [signupEmail, setSignupEmail] = useState('')
   const [signupPassword, setSignupPassword] = useState('')
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     try {
@@ -26,12 +26,12 @@ function LoginPage() {
       localStorage.setItem('token', data.token)
       localStorage.setItem('username', data.name)
       navigate('/posts')
-    } catch (err) {
+    } catch (err: any) {
       setError(err.response?.status === 401 ? 'Invalid email or password.' : 'Something went wrong.')
     }
   }
 
-  const handleSignup = async (e) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     try {
@@ -43,12 +43,12 @@ function LoginPage() {
       localStorage.setItem('token', data.token)
       localStorage.setItem('username', data.name)
       navigate('/posts')
-    } catch (err) {
+    } catch (err: any) {
       setError(err.response?.data?.msg || 'Something went wrong.')
     }
   }
 
-  const switchForm = (e) => {
+  const switchForm = (e: React.MouseEvent) => {
     e.preventDefault()
     setError('')
     setIsLogin(!isLogin)
@@ -63,32 +63,15 @@ function LoginPage() {
             <form onSubmit={handleLogin}>
               <div className="input-group">
                 <label htmlFor="login-email">Email</label>
-                <input
-                  type="email"
-                  id="login-email"
-                  placeholder="Enter email"
-                  value={loginEmail}
-                  onChange={(e) => setLoginEmail(e.target.value)}
-                  required
-                />
+                <input type="email" id="login-email" placeholder="Enter email" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} required />
               </div>
               <div className="input-group">
                 <label htmlFor="login-password">Password</label>
-                <input
-                  type="password"
-                  id="login-password"
-                  placeholder="Enter password"
-                  value={loginPassword}
-                  onChange={(e) => setLoginPassword(e.target.value)}
-                  required
-                />
+                <input type="password" id="login-password" placeholder="Enter password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} required />
               </div>
               {error && <p className="error-msg">{error}</p>}
               <button type="submit" className="btn">Login</button>
-              <p className="switch">
-                Don't have an account?{' '}
-                <a href="#" onClick={switchForm}>Sign up</a>
-              </p>
+              <p className="switch">Don't have an account? <a href="#" onClick={switchForm}>Sign up</a></p>
             </form>
           </>
         ) : (
@@ -97,43 +80,19 @@ function LoginPage() {
             <form onSubmit={handleSignup}>
               <div className="input-group">
                 <label htmlFor="signup-username">Username</label>
-                <input
-                  type="text"
-                  id="signup-username"
-                  placeholder="Choose username"
-                  value={signupUsername}
-                  onChange={(e) => setSignupUsername(e.target.value)}
-                  required
-                />
+                <input type="text" id="signup-username" placeholder="Choose username" value={signupUsername} onChange={(e) => setSignupUsername(e.target.value)} required />
               </div>
               <div className="input-group">
                 <label htmlFor="signup-email">Email</label>
-                <input
-                  type="email"
-                  id="signup-email"
-                  placeholder="Enter email"
-                  value={signupEmail}
-                  onChange={(e) => setSignupEmail(e.target.value)}
-                  required
-                />
+                <input type="email" id="signup-email" placeholder="Enter email" value={signupEmail} onChange={(e) => setSignupEmail(e.target.value)} required />
               </div>
               <div className="input-group">
                 <label htmlFor="signup-password">Password</label>
-                <input
-                  type="password"
-                  id="signup-password"
-                  placeholder="Create password"
-                  value={signupPassword}
-                  onChange={(e) => setSignupPassword(e.target.value)}
-                  required
-                />
+                <input type="password" id="signup-password" placeholder="Create password" value={signupPassword} onChange={(e) => setSignupPassword(e.target.value)} required />
               </div>
               {error && <p className="error-msg">{error}</p>}
               <button type="submit" className="btn">Sign Up</button>
-              <p className="switch">
-                Already have an account?{' '}
-                <a href="#" onClick={switchForm}>Login</a>
-              </p>
+              <p className="switch">Already have an account? <a href="#" onClick={switchForm}>Login</a></p>
             </form>
           </>
         )}
